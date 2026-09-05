@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <title>{% block title %}Buku Catatan{% endblock %}</title>
+  <style>
+    body { font-family: system-ui, sans-serif; max-width: 720px; margin: 2rem auto; padding: 0 1rem; color: #222; }
+    h1 { border-bottom: 2px solid #eee; padding-bottom: .4rem; }
+    .note { border: 1px solid #e1e1e1; border-radius: 8px; padding: 1rem; margin: 1rem 0; }
+    .note h2 { margin: 0 0 .25rem; }
+    .meta { color: #777; font-size: .85rem; }
+    .actions a, .actions button { margin-right: .5rem; }
+    form p { margin: .5rem 0; }
+    input[type=text], textarea { width: 100%; padding: .5rem; box-sizing: border-box; }
+    textarea { min-height: 8rem; }
+    button { padding: .5rem 1rem; cursor: pointer; }
+    .error { color: #b00020; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>{% block heading %}Buku Catatan{% endblock %}</h1>
+    <nav>{% block nav %}<a href="{{ url_for('index') }}">Beranda</a>{% endblock %}</nav>
+  </header>
+  <main>{% block content %}{% endblock %}</main>
+</body>
+</html>
